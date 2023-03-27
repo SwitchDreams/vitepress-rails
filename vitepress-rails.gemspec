@@ -19,8 +19,8 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = "https://github.com/SwitchDreams/vitepress-rails"
   spec.metadata["changelog_uri"] = "https://github.com/SwitchDreams/vitepress-rails"
 
-  spec.files = Dir["{bin,sig,lib,public}/**/*", "MIT-LICENSE", "Rakefile", "README.md", "rest-api-generator.gemspec",
-                   "Gemfile", "Gemfile.lock"]
+  spec.files = Dir["{bin,app,sig,config,lib,public}/**/*", "MIT-LICENSE", "Rakefile", "README.md",
+    "rest-api-generator.gemspec", "Gemfile", "Gemfile.lock"]
 
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
