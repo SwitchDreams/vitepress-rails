@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.1.3] - 2023-03-27
+
+- Better config for pages path
+
 ## [0.1.2] - 2023-03-27
 
 - Fixes rails engines
