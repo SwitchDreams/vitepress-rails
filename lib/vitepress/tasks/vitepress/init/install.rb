@@ -4,7 +4,9 @@ if Rails.root.join(".gitignore").exist?
   # High voltage genereated files
   append_to_file(".gitignore", %(\n/app/views/pages/*\n!app/views/pages/.keep\n))
   # Vitepress generated files
-  append_to_file(".gitignore", %(\n.vitepress/dist\n.vitepress/cache\n))
+  append_to_file(".gitignore", %(\ndocs/.vitepress/dist\ndocs/.vitepress/cache\n))
+  # Public assets for rails
+  append_to_file(".gitignore", %(\npublic/assets\n))
 end
 
 unless Rails.root.join("package.json").exist?
