@@ -35,6 +35,12 @@ mount Vitepress::Engine, at: "/docs"
 - ***Only works with /docs path for now***
 - In your vitepress config file needs to have base: '/docs/'.
 
+3. Ignore build assets in gitingore:
+
+```dockerignore
+ public/docs/**/*
+```
+
 ## Usage
 
 1. Write your `.md` doc inside the `docs` folder.
