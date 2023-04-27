@@ -2,6 +2,10 @@
 
 Integrate [Vitepress](https://vitepress.vuejs.org/) into your Rails application.
 
+## When you should use this gem?
+
+- The primary use case is for private documentation that utilizes your Rails authentication system
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -25,17 +29,19 @@ This command creates docs folder that contains the Vitepress default application
 2. Adds the following line to your `config/routes.rb` file:
 
 ```ruby
-mount Vitepress::Engine, at: "/"
+mount Vitepress::Engine, at: "/docs"
 ```
-***Only works with / path for now***
+
+- ***Only works with /docs path for now***
+- In your vitepress config file needs to have base: '/docs/'.
 
 ## Usage
 
-1. Write your `.md` doc inside the `docs` folder. 
+1. Write your `.md` doc inside the `docs` folder.
 2. Run `rails assets:precompile`.
 3. Your page can be accessed at `/docs/<your-page-name>`
 
-Your `/` path always will be `docs/index.md`
+Your `/docs` path always will be `docs/index.md`
 
 ## Development
 
@@ -59,4 +65,5 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Vitepress::Rails project's codebases, issue trackers, chat rooms and mailing lists is
-expected to follow the [code of conduct](https://github.com/SwitchDreams/vitepress-rails/blob/master/CODE_OF_CONDUCT.md).
+expected to follow
+the [code of conduct](https://github.com/SwitchDreams/vitepress-rails/blob/master/CODE_OF_CONDUCT.md).
