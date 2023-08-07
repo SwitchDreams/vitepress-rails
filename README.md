@@ -41,6 +41,18 @@ mount Vitepress::Engine, at: "/docs"
  public/docs/**/*
 ```
 
+4. Setup `.vitepress/config.js` (Automatic when use the generator)
+
+```js
+export default {
+  // Needs this config to work
+  base: "/docs/",
+  cleanUrls: "true",
+  //...
+};
+
+```
+
 ## Usage
 
 1. Write your `.md` doc inside the `docs` folder.
