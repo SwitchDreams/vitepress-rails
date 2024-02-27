@@ -61,6 +61,14 @@ export default {
 
 Your `/docs` path always will be `docs/index.md`
 
+### Docker
+
+If you are using Dockerfile with two build steps you need to copy the pages folder after `rails assets:precompile`.
+
+```Dockerfile
+COPY --from=assets /app/app/views/pages /app/app/views/pages
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can
