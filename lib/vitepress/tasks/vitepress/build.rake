@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "vitepress/rails/tasks"
+
 DEFAULT_BASE_PATH = "docs/"
 DOCS_PUBLIC_FOLDER_PATH = "../public/#{DEFAULT_BASE_PATH}"
 
@@ -7,8 +9,9 @@ namespace :vitepress do
   desc "Build your docs"
   task build: :environment do
     Dir.chdir("./docs") do
-      unless system "yarn install && yarn docs:build"
-        raise "vitepress: docs:build failed"
+      command = Vitepress::Rails::Tasks.build_command
+      unless system command
+        raise "vitepress-rails: Command build failed, ensure `#{command}` runs without errors"
       end
 
       # Move html files to pages folder

@@ -12,9 +12,6 @@ RuboCop::RakeTask.new
 
 task default: [:spec, :rubocop]
 
-load "rails/tasks/engine.rake"
-
-load "rails/tasks/statistics.rake"
-
+# Load custom rake tasks
 path = File.expand_path(__dir__)
-Dir.glob("#{path}/tasks/**/*.rake").each { |f| import f }
+Dir.glob("#{path}/lib/vitepress/tasks/**/*.rake").each { |f| import f }
